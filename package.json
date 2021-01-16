@@ -1,0 +1,24 @@
+{
+  "name": "number-of-weeks",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && mocha tests.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "luxon": "^1.25.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "standard": "^16.0.3"
+  },
+  "mocha": {
+    "reporter": "spec",
+    "ui": "bdd"
+  }
+}
