@@ -14,20 +14,14 @@ module.exports = (firstDayOfMonth) => {
   let numberOfWeeks = (firstDayOfMonth.getDay() === SUNDAY ? 0 : 1)
 
   /**
-   * The date of the "current" day in the following `do` loop.
+   * The date of the "current" day in the following `do` loop. This always
+   * starts as the first day of the specified month.
    * @type {Date}
    */
-  const currentDay = new Date(firstDayOfMonth.getTime())
+  let currentDay = new Date(firstDayOfMonth.getTime())
 
   /**
-   * The date immediately following that of `currentDay`. This is used to check
-   * if all of the days in the specified month have been accounted for.
-   * @type {Date}
-   */
-  let nextDay = new Date(currentDay.getFullYear(), currentDay.getMonth(), currentDay.getDate() + 1)
-
-  /**
-   * Loop thru all the days in the specified month.
+   * Start counting...
    */
   do {
     /**
@@ -36,12 +30,10 @@ module.exports = (firstDayOfMonth) => {
     if (currentDay.getDay() === SUNDAY) numberOfWeeks++
 
     /**
-     * Increment the days for `currentDay` and `nextDay`. This is done by first
-     * setting `currentDay` equal to the same calendar date as `nextDay`, and
-     * then using a JS trick to calculate the next calendar day after that.
+     * Increment `currentDay`. This uses a JS trick to calculate the next
+     * calendar date.
      */
-    currentDay.setTime(nextDay.getTime())
-    nextDay = new Date(currentDay.getFullYear(), currentDay.getMonth(), currentDay.getDate() + 1)
+    currentDay = new Date(currentDay.getFullYear(), currentDay.getMonth(), currentDay.getDate() + 1)
 
     /**
      * When the end of the specified month is past, then `currentDay.getDate()`
