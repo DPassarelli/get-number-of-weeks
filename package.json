@@ -6,6 +6,10 @@
   "scripts": {
     "test": "standard && mocha tests.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DPassarelli/number-of-weeks"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

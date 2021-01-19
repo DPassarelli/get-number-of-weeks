@@ -1,0 +1,1 @@
+module.exports = (f) => { let n = Number(!!f.getDay()); let d = new Date(f.getTime()); do { n += !d.getDay(); d = new Date(d.getFullYear(), d.getMonth(), d.getDate() + 1) } while (d.getDate() > 1); return n }

@@ -68,4 +68,8 @@ describe('the "number of weeks" module', () => {
   context('implemented with luxon', () => {
     testSuite(require('./luxon.js'))
   })
+
+  context('implemented as a 1-liner', () => {
+    testSuite(require('./one-liner.js'))
+  })
 })
